@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap");
 
 body {
   background-color: white;
   font-family: "Open Sans", sans-serif;
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 .header {
   width: 80%;
@@ -15,20 +16,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #454545;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #89b5af;
   color: white;
 }
 
 .logoSaGulita {
   padding: 10px;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
   font-size: 2em;
   display: flex;
+  margin-left: 1em;
+  font-weight: bold;
 }
-.heartIcon{
+.heartIcon {
   margin-top: 35px;
-  color: red;
+  color: #e97777;
   margin-left: 10px;
 }
 
@@ -41,7 +43,7 @@ body {
 }
 
 .links p {
-  margin: 0 30px; /* Agrega 10px de margen horizontal */
+  margin: 0 30px;
 }
 
 .socialMedia {
@@ -50,6 +52,90 @@ body {
   font-size: 2rem;
 }
 .socialMedia a {
-  color: unset; /* Quita el color de link */
+  color: unset;
+  margin-right: 10px;
+}
+.footer {
+  width: 80%;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #89b5af;
+  color: white;
+}
+.textFooter {
+  text-align: center;
+  flex-grow: 1;
+}
+.saGulita {
+  display: flex;
+  height: 100vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
+.saGulitaImage {
+  background-image: url("./assets/edificioSaGulita.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.saGulitaText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin-left: 20px;
+  text-align: center;
+}
+.foodImage {
+  background-image: url("./assets/foodSaGulita.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+  align-items: center;
+}
+.foodText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin-right: 20px;
+  text-align: center;
+}
+.mapa {
+  width: 500px;
+  height: 50%;
+}
+.mapaText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin-left: 20px;
+  text-align: center;
+}
+.mapaImage {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
