@@ -1,15 +1,7 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import "../src/index.css";
-import Home from "./pages/Home";
+import Routes from "./routes/routes";
 
-function App() {
-  return (
-    <div>
-      <Home />
-    </div>
-  );
-}
+export const App = () => <Routes />;
 
 export default App;
