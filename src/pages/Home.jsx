@@ -2,6 +2,7 @@ import React from "react";
 import Mapa from "../components/MapSaGulita";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import "../styles/Home.css";
 
 function Home() {
   return (
@@ -9,7 +10,7 @@ function Home() {
       <Header />
       <div className="saGulita">
         <div className="saGulitaText">
-          <h2>Quienes somos?</h2>
+          <h1 className="title">Quienes somos?</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque
@@ -26,7 +27,7 @@ function Home() {
       <div className="saGulita">
         <div className="foodImage"></div>
         <div className="foodText">
-          <h2>Nuestra comida</h2>
+          <h1 className="title">Nuestra comida</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque
@@ -41,7 +42,7 @@ function Home() {
       </div>
       <div className="saGulita">
         <div className="calendarText">
-          <h2>Horario y contacto</h2>
+          <h1 className="title">Horario y contacto</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque
@@ -55,12 +56,12 @@ function Home() {
         </div>
         <div className="calendarImage"></div>
       </div>
-      <div className="saGulita">
+      <div className="gridMapa">
         <div className="mapaImage">
           <Mapa />
         </div>
         <div className="mapaText">
-          <h2>Donde estamos?</h2>
+          <h1 className="title">Donde estamos?</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque
