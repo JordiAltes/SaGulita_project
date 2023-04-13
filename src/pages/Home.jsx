@@ -61,7 +61,7 @@ function Home() {
           <Mapa />
         </div>
         <div className="mapaText">
-          <h1 className="title">Donde estamos?</h1>
+          <h1>Donde estamos?</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
@@ -17,13 +18,19 @@ function Header() {
         <Link className="linksText" to="/">
           Home
         </Link>
-        <p>Menu</p>
-        <Link className="linksText" to="/About">
+        <Link className="linksText" to="/Menu">
+          Menu
+        </Link>        <Link className="linksText" to="/About">
           About
         </Link>{" "}
-        <p>Catering</p>
+        <Link className="linksText" to="/Catering">
+          Catering
+        </Link>
       </div>
       <div className="socialMedia">
+        <Link to="/LogIn">
+          <FontAwesomeIcon className="userIcon" icon={faUser} />
+        </Link>
         <a href="https://www.instagram.com/sagulita/">
           <FontAwesomeIcon icon={faInstagram} />
         </a>

@@ -8,11 +8,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #E5BA73;
+  background-color: #e5ba73;
   color: white;
   margin-bottom: 2%;
 }
-
+.userIcon {
+  font-size: 0.8em;
+}
 .logoSaGulita {
   padding: 10px;
   font-family: "Fira Sans", sans-serif;
@@ -33,19 +35,15 @@
   justify-content: center;
   word-spacing: 20em;
   font-size: 1.4em;
-  margin: 0 30px;
 }
 .linksText {
   text-decoration: none;
   color: white;
+  margin: 0 30px;
 }
 .linksText:hover {
   text-decoration: underline;
   font-weight: bold;
-}
-
-.links p {
-  margin: 0 30px;
 }
 
 .socialMedia {

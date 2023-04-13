@@ -1,45 +1,78 @@
-import React, { useState } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import React, { useState } from "react";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+/* import { useNavigate } from "react-router-dom";
+ */
+import "../styles/Auth.css";
+import "firebase/auth";
 
-firebase.initializeApp(firebaseConfig); // Configuración de Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCrMv6e8nsuV5Sm8wlUFzXSiIRR6qbDwKE",
+  authDomain: "sagulita-d8f9d.firebaseapp.com",
+  projectId: "sagulita-d8f9d",
+  storageBucket: "sagulita-d8f9d.appspot.com",
+  messagingSenderId: "762832789159",
+  appId: "1:762832789159:web:363f4cce6097d27c570582",
+  measurementId: "G-4HC8SL4T0G",
+};
 
-const auth = firebase.auth();
+const app = initializeApp(firebaseConfig); // Configuración de Firebase
+
+const auth = getAuth(app);
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleEmailChange = event => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
-  const handlePasswordChange = event => {
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  const handleFormSubmit = async event => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-    } catch (error) {
-      setErrorMessage(error.message);
-    }
+    await signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        // navigate("/");
+        // sessionStorage.setItem(
+        //   "Auth Token",
+        //   userCredential._tokenResponse.refreshToken
+        // );
+      })
+      .catch(() => {
+        alert("Email o contraseña incorrectos");
+      });
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div>
+    <form onSubmit={handleFormSubmit} className="logInForm">
+      <div className="inputsLogIn">
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" value={email} onChange={handleEmailChange} />
-      </div>
-      <div>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={handleEmailChange}
+          className="inputLogIn"
+        />
+
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" value={password} onChange={handlePasswordChange} />
+        <input
+          type="password"
+          id="password"
+          value={password}
+          onChange={handlePasswordChange}
+          className="inputLogIn"
+        />
       </div>
-      {errorMessage && <div>{errorMessage}</div>}
       <button type="submit">Log In</button>
     </form>
   );
