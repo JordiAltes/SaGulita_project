@@ -24,7 +24,7 @@ function Header() {
           About
         </Link>{" "}
         <Link className="linksText" to="/Catering">
-          Catering
+          Services
         </Link>
       </div>
       <div className="socialMedia">
