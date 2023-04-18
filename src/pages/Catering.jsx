@@ -5,7 +5,7 @@ import "../styles/Catering.css"
 
 function Catering() {
   return (
-    <div>
+    <div className="catering">
       <Header />
       <div className="titleCatering">
         <h1>Que servicios ofrecemos?</h1>

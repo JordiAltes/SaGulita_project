@@ -1,0 +1,42 @@
+.about {
+    background-color: #FEFAE0;
+}
+.titleAbout {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.propietarios-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.propietario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 90%;
+  height: 100%;
+}
+.propietario p {
+  text-align: center;
+  width: 50%;
+}
+.viliSaGulita {
+  background-image: url("../assets/viliSaGulita.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 30em;
+  height: 30em;
+  margin-bottom: 20px;
+}
+.evaSaGulita {
+  background-image: url("../assets/evaSaGulita.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 30em;
+  height: 30em;
+  margin-bottom: 20px;
+}

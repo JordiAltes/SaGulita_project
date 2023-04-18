@@ -20,11 +20,12 @@ function Header() {
         </Link>
         <Link className="linksText" to="/Menu">
           Menu
-        </Link>        <Link className="linksText" to="/About">
-          About
         </Link>{" "}
         <Link className="linksText" to="/Catering">
           Services
+        </Link>
+        <Link className="linksText" to="/About">
+          About
         </Link>
       </div>
       <div className="socialMedia">
