@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import AuthContext from "../context/AuthContext";
+import { useContext } from "react";
 /* import { useNavigate } from "react-router-dom";
  */
 import "../styles/Auth.css";
@@ -24,8 +26,7 @@ const auth = getAuth(app);
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -40,6 +41,7 @@ const LoginForm = () => {
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        setIsLoggedIn(true);
         console.log(user);
         // navigate("/");
         // sessionStorage.setItem(
