@@ -7,6 +7,8 @@ import {
   doc,
   getDoc,
   updateDoc,
+  deleteDoc,
+  addDoc,
 } from "firebase/firestore";
 import "firebase/firestore";
 import { db } from "../firebase/firebase";
@@ -14,6 +16,13 @@ import { db } from "../firebase/firebase";
 function Admin() {
   const [platos, setPlatos] = useState([]);
   const [platosActualizados, setPlatosActualizados] = useState([]);
+  const [nuevoPlato, setNuevoPlato] = useState({
+    Nombre: "",
+    Descripcion: "",
+    Ingredientes: "",
+    Precio: 0,
+    Menu: false,
+  });
 
   useEffect(() => {
     const fetchPlatos = async () => {
@@ -38,15 +47,59 @@ function Admin() {
 
   async function guardarMenu() {
     try {
-      // Utilizamos forEach para actualizar cada plato en la base de datos
-      platosActualizados.forEach(async (platoActualizado) => {
-        const docRef = doc(db, "platos", platoActualizado.id);
-        await updateDoc(docRef, { menu: platoActualizado.menu });
-      });
+      // Creamos una lista de promesas de actualización de documentos en la base de datos
+      const promesasActualizacion = platosActualizados.map(
+        (platoActualizado) => {
+          const docRef = doc(db, "platos", platoActualizado.id);
+          return updateDoc(docRef, { Menu: platoActualizado.Menu });
+        }
+      );
+
+      // Esperamos a que se resuelvan todas las promesas
+      await Promise.all(promesasActualizacion);
+
       alert("El menú ha sido guardado correctamente.");
     } catch (error) {
       console.error("Error al guardar el menú:", error);
       alert("Ha ocurrido un error al guardar el menú.");
+    }
+  }
+
+  async function handleDeletePlato(id) {
+    const confirmar = window.confirm(
+      "¿Estás seguro que deseas eliminar este plato?"
+    );
+    if (confirmar) {
+      try {
+        await deleteDoc(doc(db, "platos", id));
+        setPlatos(platos.filter((plato) => plato.id !== id));
+        alert("Plato eliminado correctamente.");
+      } catch (error) {
+        console.error("Error al eliminar el plato:", error);
+        alert("Ha ocurrido un error al eliminar el plato.");
+      }
+    }
+  }
+  function handleNuevoPlatoChange(event) {
+    const campo = event.target.name;
+    const valor = event.target.value;
+    setNuevoPlato({ ...nuevoPlato, [campo]: valor });
+  }
+  async function agregarPlato() {
+    try {
+      await addDoc(collection(db, "platos"), nuevoPlato);
+      setPlatos([...platos, nuevoPlato]);
+      setNuevoPlato({
+        Nombre: "",
+        Descripcion: "",
+        Ingredientes: "",
+        Precio: 0,
+        Menu: false,
+      });
+      alert("El plato ha sido agregado correctamente.");
+    } catch (error) {
+      console.error("Error al agregar el plato:", error);
+      alert("Ha ocurrido un error al agregar el plato.");
     }
   }
 
@@ -56,29 +109,76 @@ function Admin() {
       <div>
         <ul>
           {platos.map((plato, index) => (
-            <li key={index}>
+            <li key={plato.id}>
               <h3>{plato.Nombre}</h3>
               <p>{plato.Descripcion}</p>
               <p>Ingredientes: {plato.Ingredientes}</p>
               <span>Precio: {plato.Precio}€</span>
               <p>
                 Añadir a menu del dia?{" "}
-                {/* <input
-                  type="checkbox"
-                  checked={plato.Menu}
-                  onChange={(event) => handleCheckboxChange(event, index)}
-                /> */}
                 <input
                   type="checkbox"
                   checked={plato.Menu}
                   onChange={() => handleCheckboxChange(index)}
                 />
               </p>
+              <button onClick={() => handleDeletePlato(plato.id)}>
+                Eliminar plato
+              </button>{" "}
             </li>
           ))}
         </ul>
         <button onClick={guardarMenu}>Guardar cambios</button>
       </div>
+      <form>
+        <label htmlFor="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="Nombre"
+          value={nuevoPlato.Nombre}
+          onChange={handleNuevoPlatoChange}
+        />
+
+        <label htmlFor="descripcion">Descripción:</label>
+        <textarea
+          id="descripcion"
+          name="Descripcion"
+          value={nuevoPlato.Descripcion}
+          onChange={handleNuevoPlatoChange}
+        />
+
+        <label htmlFor="ingredientes">Ingredientes:</label>
+        <textarea
+          id="ingredientes"
+          name="Ingredientes"
+          value={nuevoPlato.Ingredientes}
+          onChange={handleNuevoPlatoChange}
+        />
+
+        <label htmlFor="precio">Precio:</label>
+        <input
+          type="number"
+          id="precio"
+          name="Precio"
+          value={nuevoPlato.Precio}
+          onChange={handleNuevoPlatoChange}
+        />
+
+        <label htmlFor="menu">¿Agregar a menú del día?</label>
+        <input
+          type="checkbox"
+          id="menu"
+          name="Menu"
+          checked={nuevoPlato.Menu}
+          onChange={handleNuevoPlatoChange}
+        />
+
+        <button type="button" onClick={agregarPlato}>
+          Agregar plato
+        </button>
+      </form>
+
       <Footer />
     </div>
   );
