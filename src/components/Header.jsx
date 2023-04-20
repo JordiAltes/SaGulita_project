@@ -27,9 +27,9 @@ function Header() {
         <Link className="linksText" to="/About">
           About
         </Link>
-        {/* <Link className="linksText" to="/Admin">
+        <Link className="linksText" to="/Admin">
           Admin
-        </Link> */}
+        </Link> 
       </div>
       <div className="socialMedia">
         <Link to="/LogIn">

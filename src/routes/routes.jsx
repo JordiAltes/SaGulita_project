@@ -4,6 +4,7 @@ import About from "../pages/About";
 import LogIn from "../pages/LogIn";
 import Catering from "../pages/Catering";
 import Menu from "../pages/Menu";
+import Admin from "../pages/Admin";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/LogIn" element={<LogIn />} />
         <Route path="/Catering" element={<Catering />} />
         <Route path="/Menu" element={<Menu />} />
+        <Route path="/Admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );

@@ -12,7 +12,7 @@ function Catering() {
       </div>
       <div className="saGulita">
         <div className="foodTruckText">
-          <h1 className="title">Food Truck</h1>
+          <h1 className="titleTextCatering">Food Truck</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque
@@ -29,7 +29,7 @@ function Catering() {
       <div className="saGulita">
         <div className="cateringImage"></div>
         <div className="cateringText">
-          <h1 className="title">Catering</h1>
+          <h1 className="titleTextCatering">Catering</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque
@@ -44,7 +44,7 @@ function Catering() {
       </div>
       <div className="saGulita">
         <div className="privateCheffText">
-          <h1 className="title">Cheff Privado</h1>
+          <h1 className="titleTextCatering">Cheff Privado</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             officiis quae sequi vero, dolor consequuntur porro doloremque

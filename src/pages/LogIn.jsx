@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import LoginForm from "../components/Auth";
+import LoginForm from "../components/LoginForm";
 
 function LogIn () {
     return (
