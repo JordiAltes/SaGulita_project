@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../styles/Catering.css"
+import "../styles/Catering.css";
 
 function Catering() {
   return (
@@ -14,14 +14,9 @@ function Catering() {
         <div className="foodTruckText">
           <h1 className="titleTextCatering">Food Truck</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            officiis quae sequi vero, dolor consequuntur porro doloremque
-            doloribus earum voluptas explicabo voluptatem excepturi. Quaerat
-            ipsa possimus, hic commodi unde aut! Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ullam, officiis itaque! Deleniti
-            consequatur vero nisi labore, ab molestiae enim quidem perferendis
-            libero earum error, tempora doloremque officiis illo numquam
-            tempore.
+            Disponemos de una food truck, nuestra Sa Gulita sobre ruedas. La
+            tenemos disponible para eventos, fiestas y bodas. Donde quieras y
+            cuando quieras!
           </p>
         </div>
         <div className="foodTruckImage"></div>
@@ -31,14 +26,9 @@ function Catering() {
         <div className="cateringText">
           <h1 className="titleTextCatering">Catering</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            officiis quae sequi vero, dolor consequuntur porro doloremque
-            doloribus earum voluptas explicabo voluptatem excepturi. Quaerat
-            ipsa possimus, hic commodi unde aut! Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ullam, officiis itaque! Deleniti
-            consequatur vero nisi labore, ab molestiae enim quidem perferendis
-            libero earum error, tempora doloremque officiis illo numquam
-            tempore.
+            Podeis contactar con nosotros para hacer caterings para eventos
+            privados, fiestas o bodas. Tambien hacemos tartas con previo
+            encargo.
           </p>
         </div>
       </div>
@@ -46,14 +36,10 @@ function Catering() {
         <div className="privateCheffText">
           <h1 className="titleTextCatering">Cheff Privado</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            officiis quae sequi vero, dolor consequuntur porro doloremque
-            doloribus earum voluptas explicabo voluptatem excepturi. Quaerat
-            ipsa possimus, hic commodi unde aut! Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ullam, officiis itaque! Deleniti
-            consequatur vero nisi labore, ab molestiae enim quidem perferendis
-            libero earum error, tempora doloremque officiis illo numquam
-            tempore.
+            Nuestro cheff Gerard Vilanova, especializado en comida mediterranea
+            y vegetariana, lleva 5 años de experiencia trabajando como cheff
+            privado en la isla. Puedes contactar con nosotros para pedir mas
+            información. Se adapta a las necesidades del cliente.
           </p>
         </div>
         <div className="privateCheffImage"></div>

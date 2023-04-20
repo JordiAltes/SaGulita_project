@@ -12,14 +12,13 @@ function Home() {
         <div className="saGulitaText">
           <h1 className="title">Quienes somos?</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            officiis quae sequi vero, dolor consequuntur porro doloremque
-            doloribus earum voluptas explicabo voluptatem excepturi. Quaerat
-            ipsa possimus, hic commodi unde aut! Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ullam, officiis itaque! Deleniti
-            consequatur vero nisi labore, ab molestiae enim quidem perferendis
-            libero earum error, tempora doloremque officiis illo numquam
-            tempore.
+            Nacemos del sentimiento de ponerle conciencia a una de las bases
+            vitales más importantes para el ser humano, como lo es la
+            alimentación. Por eso hemos creado un espacio de confianza donde
+            puedes venir a alimentarte de una forma casera, nutritiva, saludable
+            y deliciosa. Elaboramos nuestros productos de principio a fin con
+            productos ecológicos, de proximidad, y contamos con nuestra propia
+            huerta.
           </p>
         </div>
         <div className="saGulitaImage"></div>
@@ -29,14 +28,10 @@ function Home() {
         <div className="foodText">
           <h1 className="title">Nuestra comida</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            officiis quae sequi vero, dolor consequuntur porro doloremque
-            doloribus earum voluptas explicabo voluptatem excepturi. Quaerat
-            ipsa possimus, hic commodi unde aut! Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ullam, officiis itaque! Deleniti
-            consequatur vero nisi labore, ab molestiae enim quidem perferendis
-            libero earum error, tempora doloremque officiis illo numquam
-            tempore.
+            Ofrecemos comida vegetariana, vegana en su mayoría, sin glúten, y de
+            procedencia orgánica. Todos los días puedes encontrar variedad de
+            platos en nuestro local. Además, hacemos desayunos saludables sin
+            glúten.
           </p>
         </div>
       </div>
@@ -44,14 +39,8 @@ function Home() {
         <div className="calendarText">
           <h1 className="title">Horario y contacto</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            officiis quae sequi vero, dolor consequuntur porro doloremque
-            doloribus earum voluptas explicabo voluptatem excepturi. Quaerat
-            ipsa possimus, hic commodi unde aut! Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ullam, officiis itaque! Deleniti
-            consequatur vero nisi labore, ab molestiae enim quidem perferendis
-            libero earum error, tempora doloremque officiis illo numquam
-            tempore.
+            Nuestro horario es de 9:30 a 16:30 y abrimos de lunes a sábado.
+            Domingo descansamos.
           </p>
         </div>
         <div className="calendarImage"></div>
@@ -63,14 +52,9 @@ function Home() {
         <div className="mapaText">
           <h1>Donde estamos?</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            officiis quae sequi vero, dolor consequuntur porro doloremque
-            doloribus earum voluptas explicabo voluptatem excepturi. Quaerat
-            ipsa possimus, hic commodi unde aut! Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Ullam, officiis itaque! Deleniti
-            consequatur vero nisi labore, ab molestiae enim quidem perferendis
-            libero earum error, tempora doloremque officiis illo numquam
-            tempore.
+            Nos encontramos en Ibiza, en carretera de Sant Josep km 1,7 en la
+            población de Sant Jordi de ses Salines. Muy cerca del aeropuerto y
+            de la capital de la isla.
           </p>
         </div>
       </div>

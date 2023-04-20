@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore";
 import "firebase/firestore";
 import { db } from "../firebase/firebase";
+import "../styles/Admin.css"
 
 function Admin() {
   const [platos, setPlatos] = useState([]);
@@ -104,9 +105,9 @@ function Admin() {
   }
 
   return (
-    <div>
+    <div className="container">
       <Header />
-      <div>
+      <div className="platos">
         <ul>
           {platos.map((plato, index) => (
             <li key={plato.id}>
@@ -130,7 +131,7 @@ function Admin() {
         </ul>
         <button onClick={guardarMenu}>Guardar cambios</button>
       </div>
-      <form>
+      <form className="formulario">
         <label htmlFor="nombre">Nombre:</label>
         <input
           type="text"
