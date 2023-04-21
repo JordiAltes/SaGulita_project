@@ -4,13 +4,13 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../styles/Footer.css";
+import logoSaGulita from "../assets/logoSaGulita.jpeg";
 
 function Footer() {
   return (
     <footer className="footer">
-      <div className="logoSaGulita">
-        <p>Sa Gulita</p>
-        <FontAwesomeIcon icon={faHeart} className="heartIcon" />
+      <div class="logoSaGulita">
+        <img src={logoSaGulita} alt="Logo de Sa Gulita" class="logoImg" />
       </div>
       <div className="textFooter">
         <p>© 2023 Jordi Altés | All rights reserved </p>

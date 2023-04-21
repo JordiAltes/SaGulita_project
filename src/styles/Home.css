@@ -24,7 +24,7 @@ body {
 }
 
 .title {
-  text-decoration: overline;
+  text-decoration: underline;
 }
 .saGulitaText {
   display: flex;

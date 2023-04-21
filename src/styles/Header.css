@@ -1,17 +1,17 @@
 .header {
-  width: 90%;
+  width: 100%;
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  /* border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e5ba73;
+  background-color: #088395;
   color: white;
-  margin-bottom: 2%;
-}
+/*   margin-bottom: 2%;
+ */}
 .userIcon {
   font-size: 0.8em;
 }
@@ -33,9 +33,8 @@
 }
 
 .logoImg {
-  border-radius: 30%;
-  margin-right: 10px;
-  width: 170px;
+  border-radius: 35%;
+  width: 300px;
   height: 130px;
 }
 .heartIcon {
