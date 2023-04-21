@@ -166,7 +166,7 @@ function Admin() {
           onChange={handleNuevoPlatoChange}
         />
 
-        <label htmlFor="menu">¿Agregar a menú del día?</label>
+        <label htmlFor="menu">¿Agregar a menú del día? </label>
         <input
           type="checkbox"
           id="menu"

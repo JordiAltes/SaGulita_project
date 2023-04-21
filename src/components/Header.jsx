@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
@@ -6,16 +6,24 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
+import AuthContext from "../context/AuthContext";
+import Logout from "./LogOut";
+import logoSaGulita from "../assets/logoSaGulita.jpeg"
 
 function Header() {
+  const { userToken } = useContext(AuthContext);
+
   return (
     <header className="header">
-      <div className="logoSaGulita">
+      {/* <div className="logoSaGulita">
         <p>Sa Gulita</p>
         <FontAwesomeIcon icon={faHeart} className="heartIcon" />
+      </div> */}
+      <div class="logoSaGulita">
+        <img src={logoSaGulita} alt="Logo de Sa Gulita" class="logoImg" />
       </div>
       <div className="links">
-        <Link className="linksText" to="/">
+        <Link className="linksText" to="/Home">
           Home
         </Link>
         <Link className="linksText" to="/Menu">
@@ -27,14 +35,21 @@ function Header() {
         <Link className="linksText" to="/About">
           About
         </Link>
-        <Link className="linksText" to="/Admin">
-          Admin
-        </Link> 
+        {userToken ? (
+          <Link className="linksText" to="/Admin">
+            Admin
+          </Link>
+        ) : null}
       </div>
       <div className="socialMedia">
-        <Link to="/LogIn">
-          <FontAwesomeIcon className="userIcon" icon={faUser} />
-        </Link>
+        {userToken ? (
+          <Logout />
+        ) : (
+          <Link to="/LogIn">
+            <FontAwesomeIcon className="userIcon" icon={faUser} />
+          </Link>
+        )}
+
         <a href="https://www.instagram.com/sagulita/">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
@@ -45,4 +60,5 @@ function Header() {
     </header>
   );
 }
+
 export default Header;
