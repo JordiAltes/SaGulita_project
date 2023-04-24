@@ -9,8 +9,8 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setIsLoggedIn } = useContext(AuthContext);
-  const { setUserToken } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const { setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -23,11 +23,12 @@ const LoginForm = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    await signInWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         setIsLoggedIn(true);
-        setUserToken(userCredential._tokenResponse.refreshToken);
+        setUser(user)
+        localStorage.setItem("user", JSON.stringify(user));
         navigate("/Admin");
         console.log(user);
       })

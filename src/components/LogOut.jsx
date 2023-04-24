@@ -6,13 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 const Logout = () => {
-  const { setUserToken, setIsLoggedIn } = useContext(AuthContext);
+  const { setUser, setIsLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogOut = async () => {
     await auth.signOut();
     setIsLoggedIn(false);
-    setUserToken(null);
+    setUser(null);
     navigate("/Home");
   };
 

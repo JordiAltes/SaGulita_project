@@ -1,28 +1,15 @@
-/* import { createContext, useState } from "react";
-
-const AuthContext = createContext();
-
-export function AuthProvider({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-      {children}
-    </AuthContext.Provider>
-  );
-}
-
-export default AuthContext; */
 import { createContext, useState } from "react";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userToken, setUserToken] = useState(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null)
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, userToken, setUserToken }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, setIsLoggedIn, user, setUser }}
+    >
       {children}
     </AuthContext.Provider>
   );

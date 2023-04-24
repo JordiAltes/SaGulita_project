@@ -10,7 +10,7 @@ function Home() {
       <Header />
       <div className="saGulita">
         <div className="saGulitaText">
-          <h1 className="title">Quienes somos?</h1>
+          <h1 className="title">Quiénes somos?</h1>
           <p>
             Nacemos del sentimiento de ponerle conciencia a una de las bases
             vitales más importantes para el ser humano, como lo es la
@@ -50,7 +50,7 @@ function Home() {
           <Mapa />
         </div>
         <div className="mapaText">
-          <h1>Donde estamos?</h1>
+          <h1>Dónde estamos?</h1>
           <p>
             Nos encontramos en Ibiza, en carretera de Sant Josep km 1,7 en la
             población de Sant Jordi de ses Salines. Muy cerca del aeropuerto y

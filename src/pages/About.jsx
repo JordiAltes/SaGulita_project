@@ -26,7 +26,7 @@ function About() {
           </p>
         </div>
         <div className="propietario">
-          <h2>Vili</h2>
+          <h2>Gerard</h2>
           <div className="viliSaGulita"></div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sint

@@ -11,16 +11,12 @@ import Logout from "./LogOut";
 import logoSaGulita from "../assets/logoSaGulita.jpeg"
 
 function Header() {
-  const { userToken } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <header className="header">
-      {/* <div className="logoSaGulita">
-        <p>Sa Gulita</p>
-        <FontAwesomeIcon icon={faHeart} className="heartIcon" />
-      </div> */}
-      <div class="logoSaGulita">
-        <img src={logoSaGulita} alt="Logo de Sa Gulita" class="logoImg" />
+      <div className="logoSaGulita">
+        <img src={logoSaGulita} alt="Logo de Sa Gulita" className="logoImg" />
       </div>
       <div className="links">
         <Link className="linksText" to="/Home">
@@ -35,14 +31,14 @@ function Header() {
         <Link className="linksText" to="/About">
           About
         </Link>
-        {userToken ? (
+        {user ? (
           <Link className="linksText" to="/Admin">
             Admin
           </Link>
         ) : null}
       </div>
       <div className="socialMedia">
-        {userToken ? (
+        {user ? (
           <Logout />
         ) : (
           <Link to="/LogIn">
