@@ -5,7 +5,6 @@ import {
   getDocs,
   collection,
   doc,
-  getDoc,
   updateDoc,
   deleteDoc,
   addDoc,
@@ -38,7 +37,7 @@ function Admin() {
       setPlatosActualizados(platosArray);
     };
     fetchPlatos();
-  }, []);
+  },[]);
 
   function handleCheckboxChange(index) {
     const newPlatosActualizados = [...platosActualizados];
@@ -86,10 +85,34 @@ function Admin() {
     const valor = event.target.value;
     setNuevoPlato({ ...nuevoPlato, [campo]: valor });
   }
-  async function agregarPlato() {
+   async function agregarPlato() {
     try {
       await addDoc(collection(db, "platos"), nuevoPlato);
       setPlatos([...platos, nuevoPlato]);
+      setNuevoPlato({
+        Nombre: "",
+        Descripcion: "",
+        Ingredientes: "",
+        Precio: 0,
+        Menu: false,
+      });
+      alert("El plato ha sido agregado correctamente.");
+      window.location.reload()
+    } catch (error) {
+      alert("Ha ocurrido un error al agregar el plato.");
+    }
+  }
+  /* async function agregarPlato() {
+    try {
+      await addDoc(collection(db, "platos"), nuevoPlato);
+      const querySnapshot = await getDocs(collection(db, "platos"));
+      const platosArray = querySnapshot.docs.map((doc) => {
+        const data = doc.data();
+        data.id = doc.id;
+        data.Menu = Boolean(data.Menu);
+        return data;
+      });
+      setPlatos(platosArray);
       setNuevoPlato({
         Nombre: "",
         Descripcion: "",
@@ -102,7 +125,8 @@ function Admin() {
       console.error("Error al agregar el plato:", error);
       alert("Ha ocurrido un error al agregar el plato.");
     }
-  }
+  } */
+  
 
   return (
     <div className="container">

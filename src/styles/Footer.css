@@ -1,14 +1,12 @@
 .footer {
   width: 100%;
   margin-top: 2%;
-  margin-left: auto;
-  margin-right: auto;
-  /* border-top-left-radius: 20px;
-  border-top-right-radius: 20px; */
   display: flex;
   align-items: center;
   background-color: #088395;
   color: white;
+  margin-bottom: -50px;
+  height: 80px;
 }
 .textFooter {
   text-align: center;

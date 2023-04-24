@@ -8,9 +8,6 @@ import logoSaGulita from "../assets/logoSaGulita.jpeg";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="logoSaGulita">
-        <img src={logoSaGulita} alt="Logo de Sa Gulita" className="logoImg" />
-      </div>
       <div className="textFooter">
         <p>© 2023 Jordi Altés | All rights reserved </p>
       </div>
