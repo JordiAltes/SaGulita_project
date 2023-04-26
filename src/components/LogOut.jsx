@@ -13,7 +13,7 @@ const Logout = () => {
     await auth.signOut();
     setIsLoggedIn(false);
     setUser(null);
-    navigate("/Home");
+    navigate("/");
   };
 
   return (

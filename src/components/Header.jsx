@@ -19,7 +19,7 @@ function Header() {
         <img src={logoSaGulita} alt="Logo de Sa Gulita" className="logoImg" />
       </div>
       <div className="links">
-        <Link className="linksText" to="/Home">
+        <Link className="linksText" to="/">
           Home
         </Link>
         <Link className="linksText" to="/Menu">
