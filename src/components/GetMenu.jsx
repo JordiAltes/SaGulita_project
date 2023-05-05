@@ -1,3 +1,4 @@
+//Afegir que es puguin pujar fotos del plats
 import React, { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import "firebase/firestore";
