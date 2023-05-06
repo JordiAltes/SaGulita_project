@@ -3,26 +3,16 @@
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  /* border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #088395;
   color: white;
-/*   margin-bottom: 2%;
- */}
+}
 .userIcon {
   font-size: 0.8em;
 }
-/* .logoSaGulita {
-  padding: 10px;
-  font-family: "Fira Sans", sans-serif;
-  font-size: 2em;
-  display: flex;
-  margin-left: 1em;
-  font-weight: bold;
-} */
+
 .logoSaGulita {
   padding: 10px;
   font-family: "Fira Sans", sans-serif;

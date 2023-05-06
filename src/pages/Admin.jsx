@@ -10,8 +10,10 @@ import {
   addDoc,
 } from "firebase/firestore";
 import "firebase/firestore";
-import { db } from "../firebase/firebase";
-import "../styles/Admin.css"
+import { db, storage } from "../firebase/firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { v4 } from "uuid";
+import "../styles/Admin.css";
 
 function Admin() {
   const [platos, setPlatos] = useState([]);
@@ -22,7 +24,9 @@ function Admin() {
     Ingredientes: "",
     Precio: 0,
     Menu: false,
+    urlFoto: "",
   });
+  const [file, setFile] = useState(null)
 
   useEffect(() => {
     const fetchPlatos = async () => {
@@ -37,7 +41,7 @@ function Admin() {
       setPlatosActualizados(platosArray);
     };
     fetchPlatos();
-  },[]);
+  }, []);
 
   function handleCheckboxChange(index) {
     const newPlatosActualizados = [...platosActualizados];
@@ -74,6 +78,7 @@ function Admin() {
         await deleteDoc(doc(db, "platos", id));
         setPlatos(platos.filter((plato) => plato.id !== id));
         alert("Plato eliminado correctamente.");
+        window.location.reload();
       } catch (error) {
         console.error("Error al eliminar el plato:", error);
         alert("Ha ocurrido un error al eliminar el plato.");
@@ -85,8 +90,16 @@ function Admin() {
     const valor = event.target.value;
     setNuevoPlato({ ...nuevoPlato, [campo]: valor });
   }
-   async function agregarPlato() {
+  
+  /* async function agregarPlato() {
     try {
+      // Subir imagen al storage
+      const imagenRef = ref(storage, 'platos/' + v4());
+      await uploadBytes(imagenRef, file);
+  
+      // Obtener la URL de la imagen
+      const urlFoto = await getDownloadURL(imagenRef);
+      console.log(urlFoto);
       await addDoc(collection(db, "platos"), nuevoPlato);
       setPlatos([...platos, nuevoPlato]);
       setNuevoPlato({
@@ -95,37 +108,47 @@ function Admin() {
         Ingredientes: "",
         Precio: 0,
         Menu: false,
+        urlFoto: "",
       });
       alert("El plato ha sido agregado correctamente.");
-      window.location.reload()
+      window.location.reload();
     } catch (error) {
       alert("Ha ocurrido un error al agregar el plato.");
+      console.log(error);
     }
-  }
-  /* async function agregarPlato() {
+      
+  } */
+  async function agregarPlato() {
     try {
-      await addDoc(collection(db, "platos"), nuevoPlato);
-      const querySnapshot = await getDocs(collection(db, "platos"));
-      const platosArray = querySnapshot.docs.map((doc) => {
-        const data = doc.data();
-        data.id = doc.id;
-        data.Menu = Boolean(data.Menu);
-        return data;
-      });
-      setPlatos(platosArray);
+      // Subir imagen al storage
+      const imagenRef = ref(storage, 'platos/' + v4());
+      await uploadBytes(imagenRef, file);
+  
+      // Obtener la URL de la imagen
+      const urlFoto = await getDownloadURL(imagenRef);
+      console.log(urlFoto);
+  
+      // Agregar la URL de la foto al objeto nuevoPlato
+      const platoConFoto = { ...nuevoPlato, urlFoto };
+  
+      await addDoc(collection(db, "platos"), platoConFoto);
+      setPlatos([...platos, platoConFoto]);
       setNuevoPlato({
         Nombre: "",
         Descripcion: "",
         Ingredientes: "",
         Precio: 0,
         Menu: false,
+        urlFoto: "",
       });
       alert("El plato ha sido agregado correctamente.");
+      window.location.reload();
     } catch (error) {
-      console.error("Error al agregar el plato:", error);
       alert("Ha ocurrido un error al agregar el plato.");
+      console.log(error);
     }
-  } */
+  }
+  
   
 
   return (
@@ -153,7 +176,9 @@ function Admin() {
             </li>
           ))}
         </ul>
-        <button onClick={guardarMenu}>Guardar cambios</button>
+        <button className="buttonGuardarCambios" onClick={guardarMenu}>
+          Guardar menú del dia
+        </button>
       </div>
       <form className="formulario">
         <label htmlFor="nombre">Nombre:</label>
@@ -189,14 +214,13 @@ function Admin() {
           value={nuevoPlato.Precio}
           onChange={handleNuevoPlatoChange}
         />
-
-        <label htmlFor="menu">¿Agregar a menú del día? </label>
+        <label htmlFor="imagen">Imagen:</label>
         <input
-          type="checkbox"
-          id="menu"
-          name="Menu"
-          checked={nuevoPlato.Menu}
-          onChange={handleNuevoPlatoChange}
+          type="file"
+          id="imagen"
+          name="Image"
+          onChange={e => setFile(e.target.files[0])}
+          
         />
 
         <button type="button" onClick={agregarPlato}>

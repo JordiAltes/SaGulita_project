@@ -1,0 +1,32 @@
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plato-container {
+  margin: 20px;
+  padding: 10px;
+  border: 3px solid #088395;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.plato-img {
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.plato-nombre {
+  margin-top: 10px;
+}
+
+.plato-precio {
+  display: block;
+  margin-top: 10px;
+}
+.titleMenu {
+text-align: center;
+}

@@ -33,7 +33,7 @@ function Menu() {
   return (
     <div>
       <Header />
-      <h1>Menú del dia: {fechaFormateada} </h1>
+      <h1 className="titleMenu">Menú del dia: {fechaFormateada} </h1>
       <GetMenu />
       <Footer />
     </div>

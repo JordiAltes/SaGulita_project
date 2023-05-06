@@ -1,8 +1,8 @@
-//Afegir que es puguin pujar fotos del plats
 import React, { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import "firebase/firestore";
 import { db } from "../firebase/firebase";
+import "../styles/GetMenu.css";
 
 function GetMenu() {
   const [platos, setPlatos] = useState([]);
@@ -19,17 +19,14 @@ function GetMenu() {
   const menuPlatos = platos.filter((plato) => plato.Menu);
 
   return (
-    <div>
-      <ul>
-        {menuPlatos.map((plato, index) => (
-          <li key={index}>
-            <h3>{plato.Nombre}</h3>
-            <p>{plato.Descripcion}</p>
-            <p>Ingredientes: {plato.Ingredientes}</p>
-            <span>Precio: {plato.Precio}€</span>
-          </li>
-        ))}
-      </ul>
+    <div className="menu-container">
+      {menuPlatos.map((plato, index) => (
+        <div className="plato-container" key={index}>
+          <img src={plato.urlFoto} alt="" className="plato-img" />
+          <h2 className="plato-nombre">{plato.Nombre}</h2>
+          <span className="plato-precio">Precio por ración: {plato.Precio}€</span>
+        </div>
+      ))}
     </div>
   );
 }
