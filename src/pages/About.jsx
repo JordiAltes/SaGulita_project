@@ -3,8 +3,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/About.css";
 
-
-
 function About() {
   return (
     <main className="about">

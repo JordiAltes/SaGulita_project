@@ -26,7 +26,7 @@ function Admin() {
     Menu: false,
     urlFoto: "",
   });
-  const [file, setFile] = useState(null)
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
     const fetchPlatos = async () => {
@@ -90,7 +90,7 @@ function Admin() {
     const valor = event.target.value;
     setNuevoPlato({ ...nuevoPlato, [campo]: valor });
   }
-  
+
   /* async function agregarPlato() {
     try {
       // Subir imagen al storage
@@ -121,16 +121,16 @@ function Admin() {
   async function agregarPlato() {
     try {
       // Subir imagen al storage
-      const imagenRef = ref(storage, 'platos/' + v4());
+      const imagenRef = ref(storage, "platos/" + v4());
       await uploadBytes(imagenRef, file);
-  
+
       // Obtener la URL de la imagen
       const urlFoto = await getDownloadURL(imagenRef);
       console.log(urlFoto);
-  
+
       // Agregar la URL de la foto al objeto nuevoPlato
       const platoConFoto = { ...nuevoPlato, urlFoto };
-  
+
       await addDoc(collection(db, "platos"), platoConFoto);
       setPlatos([...platos, platoConFoto]);
       setNuevoPlato({
@@ -148,8 +148,6 @@ function Admin() {
       console.log(error);
     }
   }
-  
-  
 
   return (
     <div className="container">
@@ -219,8 +217,7 @@ function Admin() {
           type="file"
           id="imagen"
           name="Image"
-          onChange={e => setFile(e.target.files[0])}
-          
+          onChange={(e) => setFile(e.target.files[0])}
         />
 
         <button type="button" onClick={agregarPlato}>

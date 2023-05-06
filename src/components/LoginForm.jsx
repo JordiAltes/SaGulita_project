@@ -27,7 +27,7 @@ const LoginForm = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         setIsLoggedIn(true);
-        setUser(user)
+        setUser(user);
         localStorage.setItem("user", JSON.stringify(user));
         navigate("/Admin");
         console.log(user);

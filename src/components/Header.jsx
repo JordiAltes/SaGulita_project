@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import AuthContext from "../context/AuthContext";
 import Logout from "./LogOut";
-import logoSaGulita from "../assets/logoSaGulita.jpeg"
+import logoSaGulita from "../assets/logoSaGulita.jpeg";
 
 function Header() {
   const { user } = useContext(AuthContext);

@@ -17,7 +17,11 @@ const Logout = () => {
   };
 
   return (
-    <FontAwesomeIcon icon={faArrowRightFromBracket} onClick={handleLogOut} className="iconLogOut"/>
+    <FontAwesomeIcon
+      icon={faArrowRightFromBracket}
+      onClick={handleLogOut}
+      className="iconLogOut"
+    />
   );
 };
 

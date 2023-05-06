@@ -43,7 +43,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .modal-content {
@@ -65,7 +64,6 @@
   object-fit: cover;
   margin-bottom: 1rem;
   border-radius: 10px;
-
 }
 
 .modal-nombre {
