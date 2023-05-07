@@ -18,8 +18,9 @@
   height: 100%;
 }
 .propietario p {
-  text-align: center;
   width: 50%;
+  text-align: justify;
+  line-height: 1.5;
 }
 .viliSaGulita {
   background-image: url("../assets/viliSaGulita.jpeg");
