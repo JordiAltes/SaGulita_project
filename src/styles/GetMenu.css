@@ -82,3 +82,6 @@
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
+.modal-close:hover {
+  cursor: pointer;
+}

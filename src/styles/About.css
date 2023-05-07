@@ -13,7 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 30px;
   width: 90%;
   height: 100%;
 }
@@ -22,16 +21,9 @@
   text-align: justify;
   line-height: 1.5;
 }
-.viliSaGulita {
-  background-image: url("../assets/viliSaGulita.jpeg");
-  background-size: cover;
-  background-position: center;
-  width: 30em;
-  height: 30em;
-  margin-bottom: 20px;
-}
+
 .evaSaGulita {
-  background-image: url("../assets/evaSaGulita.jpeg");
+  background-image: url("../assets/viliEva.jpeg");
   background-size: cover;
   background-position: center;
   width: 30em;

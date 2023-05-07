@@ -11,7 +11,6 @@ function About() {
       <div className="propietarios-container">
         <div className="propietario">
           <h2 className="nomPropietario">Eva</h2>
-          <div className="evaSaGulita"></div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
             laudantium laborum excepturi voluptatem quae dignissimos ut magni
@@ -22,10 +21,10 @@ function About() {
             architecto nihil dolores nemo! Magni, non. Autem dolorem quam
             tempore.
           </p>
+          <div className="evaSaGulita"></div>
         </div>
         <div className="propietario">
           <h2 className="nomPropietario">Gerard</h2>
-          <div className="viliSaGulita"></div>
           <p>
             Mi gran pasión por la comida y la agricultura orgánica ha sido
             fundamental en mi carrera culinaria. Cocinar es mi forma de vida, y
