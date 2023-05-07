@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setIsLoggedIn } = useContext(AuthContext);
-  const { setUser } = useContext(AuthContext);
+  const { setUserToken } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleEmailChange = (event) => {
@@ -24,13 +24,13 @@ const LoginForm = () => {
     event.preventDefault();
 
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
+      .then(async (userCredential) => {
+        const userToken = await userCredential.user.getIdToken();
+        console.log(userToken);
         setIsLoggedIn(true);
-        setUser(user);
-        localStorage.setItem("user", JSON.stringify(user));
+        setUserToken(userToken);
+        localStorage.setItem("userToken", JSON.stringify(userToken));
         navigate("/Admin");
-        console.log(user);
       })
       .catch(() => {
         alert("Email o contraseña incorrectos");

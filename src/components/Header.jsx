@@ -11,7 +11,7 @@ import Logout from "./LogOut";
 import logoSaGulita from "../assets/logoSaGulita.jpeg";
 
 function Header() {
-  const { user } = useContext(AuthContext);
+  const { userToken } = useContext(AuthContext);
 
   return (
     <header className="header">
@@ -31,14 +31,14 @@ function Header() {
         <Link className="linksText" to="/About">
           About
         </Link>
-        {user ? (
+        {userToken ? (
           <Link className="linksText" to="/Admin">
             Admin
           </Link>
         ) : null}
       </div>
       <div className="socialMedia">
-        {user ? (
+        {userToken ? (
           <Logout />
         ) : (
           <Link to="/LogIn">

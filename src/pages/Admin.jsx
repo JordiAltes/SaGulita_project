@@ -27,14 +27,15 @@ function Admin() {
     urlFoto: "",
   });
   const [file, setFile] = useState(null);
+  const [busqueda, setBusqueda] = useState("");
 
   useEffect(() => {
     const fetchPlatos = async () => {
       const querySnapshot = await getDocs(collection(db, "platos"));
       const platosArray = querySnapshot.docs.map((doc) => {
         const data = doc.data();
-        data.id = doc.id; // agregamos el id del documento
-        data.Menu = Boolean(data.Menu); // aseguramos que `menu` es un booleano
+        data.id = doc.id;
+        data.Menu = Boolean(data.Menu);
         return data;
       });
       setPlatos(platosArray);
@@ -51,15 +52,12 @@ function Admin() {
 
   async function guardarMenu() {
     try {
-      // Creamos una lista de promesas de actualización de documentos en la base de datos
       const promesasActualizacion = platosActualizados.map(
         (platoActualizado) => {
           const docRef = doc(db, "platos", platoActualizado.id);
           return updateDoc(docRef, { Menu: platoActualizado.Menu });
         }
       );
-
-      // Esperamos a que se resuelvan todas las promesas
       await Promise.all(promesasActualizacion);
 
       alert("El menú ha sido guardado correctamente.");
@@ -90,34 +88,13 @@ function Admin() {
     const valor = event.target.value;
     setNuevoPlato({ ...nuevoPlato, [campo]: valor });
   }
+  function filtrarPlatosPorNombre(platos, busqueda) {
+    return platos.filter((plato) =>
+      plato.Nombre.toLowerCase().includes(busqueda.toLowerCase())
+    );
+  }
+  const platosFiltrados = filtrarPlatosPorNombre(platos, busqueda);
 
-  /* async function agregarPlato() {
-    try {
-      // Subir imagen al storage
-      const imagenRef = ref(storage, 'platos/' + v4());
-      await uploadBytes(imagenRef, file);
-  
-      // Obtener la URL de la imagen
-      const urlFoto = await getDownloadURL(imagenRef);
-      console.log(urlFoto);
-      await addDoc(collection(db, "platos"), nuevoPlato);
-      setPlatos([...platos, nuevoPlato]);
-      setNuevoPlato({
-        Nombre: "",
-        Descripcion: "",
-        Ingredientes: "",
-        Precio: 0,
-        Menu: false,
-        urlFoto: "",
-      });
-      alert("El plato ha sido agregado correctamente.");
-      window.location.reload();
-    } catch (error) {
-      alert("Ha ocurrido un error al agregar el plato.");
-      console.log(error);
-    }
-      
-  } */
   async function agregarPlato() {
     try {
       // Subir imagen al storage
@@ -153,8 +130,19 @@ function Admin() {
     <div className="container">
       <Header />
       <div className="platos">
+        <div className="inputSearch">
+          <label htmlFor="busqueda">Buscar platos por nombre: </label>
+          <input
+            type="text"
+            id="busqueda"
+            name="Busqueda"
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+          />
+        </div>
+
         <ul>
-          {platos.map((plato, index) => (
+          {platosFiltrados.map((plato, index) => (
             <li key={plato.id}>
               <h3>{plato.Nombre}</h3>
               <p>{plato.Descripcion}</p>

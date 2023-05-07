@@ -4,12 +4,12 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(
-    JSON.parse(localStorage.getItem("user")) || null
+  const [userToken, setUserToken] = useState(
+    JSON.parse(localStorage.getItem("userToken")) || null
   ); // Canviar user per usertoken
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, user, setUser }}>
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, userToken, setUserToken }}>
       {children}
     </AuthContext.Provider>
   );
