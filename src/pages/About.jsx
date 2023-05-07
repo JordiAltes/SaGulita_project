@@ -10,7 +10,7 @@ function About() {
       <h1 className="titleAbout">Quienes somos?</h1>
       <div className="propietarios-container">
         <div className="propietario">
-          <h2>Eva</h2>
+          <h2 className="nomPropietario">Eva</h2>
           <div className="evaSaGulita"></div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
@@ -24,7 +24,7 @@ function About() {
           </p>
         </div>
         <div className="propietario">
-          <h2>Gerard</h2>
+          <h2 className="nomPropietario">Gerard</h2>
           <div className="viliSaGulita"></div>
           <p>
             Mi gran pasión por la comida y la agricultura orgánica ha sido
