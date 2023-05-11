@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../styles/Catering.css";
+import "../styles/Services.css";
 
-function Catering() {
+function Services() {
   return (
     <div>
       <Header />
@@ -48,4 +48,4 @@ function Catering() {
     </div>
   );
 }
-export default Catering;
+export default Services;

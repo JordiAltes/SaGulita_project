@@ -24,7 +24,7 @@ function Header() {
         <Link className="linksText" to="/Menu">
           Menu
         </Link>{" "}
-        <Link className="linksText" to="/Catering">
+        <Link className="linksText" to="/Services">
           Services
         </Link>
         <Link className="linksText" to="/About">
