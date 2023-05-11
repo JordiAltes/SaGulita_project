@@ -12,17 +12,23 @@ function About() {
         <div className="propietario">
           <h2 className="nomPropietario">Eva</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
-            laudantium laborum excepturi voluptatem quae dignissimos ut magni
-            minima cumque dolores cum dolorum quia commodi assumenda distinctio
-            molestiae mollitia, deserunt amet! Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Nisi iusto placeat dolore minus
-            voluptate excepturi error cupiditate voluptates saepe beatae,
-            architecto nihil dolores nemo! Magni, non. Autem dolorem quam
-            tempore.
+            El inicio de Sa gulita fue resultado de un inesperado giro del
+            destino que no se encontraba en mis planes. Aunque no tenía
+            intención de emprender, la inspiración surgió de repente al
+            encontrarme con un local en alquiler. Reconocí de inmediato que era
+            el lugar perfecto para brindar a las personas un espacio donde
+            pudieran disfrutar de una alimentación saludable. Lo empece con 26
+            años y mi entusiasmo e ilusion me llevó a tomar las riendas y
+            descubrir una conexión apasionante con la comida. A medida que
+            investigaba y experimentaba, fui evolucionando y formando un equipo.
+            Con el apoyo de mi pareja, quien se convirtió en mi socio, pudimos
+            crear juntos muchas cosas nuevas. Comenzamos a elaborar fermentos,
+            bebidas fermentadas, quesos, todo de manera casera, y también
+            aprovechamos los alimentos de nuestra propia huerta. Siempre con la
+            intención de nutrir no solo los cuerpos, sino también las almas.
           </p>
-          <div className="evaSaGulita"></div>
         </div>
+          <div className="fotoAbout"></div>
         <div className="propietario">
           <h2 className="nomPropietario">Gerard</h2>
           <p>

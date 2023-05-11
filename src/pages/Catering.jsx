@@ -5,12 +5,12 @@ import "../styles/Catering.css";
 
 function Catering() {
   return (
-    <div className="catering">
+    <div>
       <Header />
       <div className="titleCatering">
         <h1>Que servicios ofrecemos?</h1>
       </div>
-      <div className="saGulita">
+      <div className="catering">
         <div className="foodTruckText">
           <h1 className="titleTextCatering">Food Truck</h1>
           <p>
@@ -21,8 +21,7 @@ function Catering() {
         </div>
         <div className="foodTruckImage"></div>
       </div>
-      <div className="saGulita">
-        <div className="cateringImage"></div>
+      <div className="catering">
         <div className="cateringText">
           <h1 className="titleTextCatering">Catering</h1>
           <p>
@@ -31,8 +30,9 @@ function Catering() {
             encargo.
           </p>
         </div>
+        <div className="cateringImage"></div>
       </div>
-      <div className="saGulita">
+      <div className="catering">
         <div className="privateCheffText">
           <h1 className="titleTextCatering">Cheff Privado</h1>
           <p>

@@ -3,9 +3,9 @@
 body {
   background-color: white;
   font-family: "Fira Sans", sans-serif;
-  margin: 0 0 0 0;
-  position: relative;
-  min-height: 75vh;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .saGulita {
@@ -14,6 +14,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .saGulitaImage {
@@ -25,7 +26,8 @@ body {
   align-items: center;
 }
 
-.title {
+.title,
+.titleMap {
   text-decoration: underline;
 }
 .saGulitaText {
@@ -37,7 +39,6 @@ body {
   width: 30%;
   text-align: center;
   margin-left: 10%;
-  opacity: 90%;
 }
 .saGulitaText p {
   opacity: 70%;
@@ -49,7 +50,6 @@ body {
   background-position: center;
   width: 50%;
   height: 100%;
-  align-items: center;
 }
 .foodText {
   display: flex;
@@ -58,8 +58,8 @@ body {
   align-items: center;
   justify-content: center;
   width: 30%;
-  margin-right: 10%;
   text-align: center;
+  margin-left: 10%;
 }
 .foodText p {
   opacity: 70%;
@@ -71,11 +71,9 @@ body {
 .mapaText {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   width: 30%;
   margin-right: 10%;
-  text-align: center;
 }
 .mapaText p {
   opacity: 70%;
@@ -124,4 +122,33 @@ body {
   margin-left: 4%;
   margin-right: 4%;
   background-color: #daf5ff;
+}
+
+@media screen and (max-width: 768px) {
+  .saGulita {
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+  }
+  .saGulitaImage,
+  .foodImage,
+  .calendarImage {
+    width: 100%;
+  }
+  .saGulitaText,
+  .calendarText,
+  .foodText {
+    width: 80%;
+    font-size: medium;
+
+  }
+  .saGulitaImage {
+    margin-bottom: 10px;
+  }
+  
+}
+@media screen and (max-width: 380px) {
+  .titleMap {
+    display: none;
+  }
 }

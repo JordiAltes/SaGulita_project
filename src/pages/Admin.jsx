@@ -127,93 +127,95 @@ function Admin() {
   }
 
   return (
-    <div className="container">
+    <div>
       <Header />
-      <div className="platos">
-        <div className="inputSearch">
-          <label htmlFor="busqueda">Buscar platos por nombre: </label>
+      <div className="container">
+        <div className="platos">
+          <div className="inputSearch">
+            <label htmlFor="busqueda">Buscar platos por nombre: </label>
+            <input
+              type="text"
+              id="busqueda"
+              name="Busqueda"
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+            />
+          </div>
+
+          <ul>
+            {platosFiltrados.map((plato, index) => (
+              <li key={plato.id}>
+                <h3>{plato.Nombre}</h3>
+                <p>{plato.Descripcion}</p>
+                <p>Ingredientes: {plato.Ingredientes}</p>
+                <span>Precio: {plato.Precio}€</span>
+                <p>
+                  Añadir a menu del dia?{" "}
+                  <input
+                    type="checkbox"
+                    checked={plato.Menu}
+                    onChange={() => handleCheckboxChange(index)}
+                  />
+                </p>
+                <button onClick={() => handleDeletePlato(plato.id)}>
+                  Eliminar plato
+                </button>{" "}
+              </li>
+            ))}
+          </ul>
+          <button className="buttonGuardarCambios" onClick={guardarMenu}>
+            Guardar menú del dia
+          </button>
+        </div>
+        <form className="formulario">
+          <label htmlFor="nombre">Nombre:</label>
           <input
             type="text"
-            id="busqueda"
-            name="Busqueda"
-            value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
+            id="nombre"
+            name="Nombre"
+            value={nuevoPlato.Nombre}
+            onChange={handleNuevoPlatoChange}
           />
-        </div>
 
-        <ul>
-          {platosFiltrados.map((plato, index) => (
-            <li key={plato.id}>
-              <h3>{plato.Nombre}</h3>
-              <p>{plato.Descripcion}</p>
-              <p>Ingredientes: {plato.Ingredientes}</p>
-              <span>Precio: {plato.Precio}€</span>
-              <p>
-                Añadir a menu del dia?{" "}
-                <input
-                  type="checkbox"
-                  checked={plato.Menu}
-                  onChange={() => handleCheckboxChange(index)}
-                />
-              </p>
-              <button onClick={() => handleDeletePlato(plato.id)}>
-                Eliminar plato
-              </button>{" "}
-            </li>
-          ))}
-        </ul>
-        <button className="buttonGuardarCambios" onClick={guardarMenu}>
-          Guardar menú del dia
-        </button>
+          <label htmlFor="descripcion">Descripción:</label>
+          <textarea
+            id="descripcion"
+            name="Descripcion"
+            value={nuevoPlato.Descripcion}
+            onChange={handleNuevoPlatoChange}
+          />
+
+          <label htmlFor="ingredientes">Ingredientes:</label>
+          <textarea
+            id="ingredientes"
+            name="Ingredientes"
+            value={nuevoPlato.Ingredientes}
+            onChange={handleNuevoPlatoChange}
+          />
+
+          <label htmlFor="precio">Precio:</label>
+          <input
+            type="number"
+            id="precio"
+            name="Precio"
+            value={nuevoPlato.Precio}
+            onChange={handleNuevoPlatoChange}
+          />
+          <label htmlFor="imagen">Imagen:</label>
+          <input
+            type="file"
+            id="imagen"
+            name="Image"
+            onChange={(e) => setFile(e.target.files[0])}
+          />
+
+          <button type="button" onClick={agregarPlato}>
+            Agregar plato
+          </button>
+        </form>
+
+        <Footer />
       </div>
-      <form className="formulario">
-        <label htmlFor="nombre">Nombre:</label>
-        <input
-          type="text"
-          id="nombre"
-          name="Nombre"
-          value={nuevoPlato.Nombre}
-          onChange={handleNuevoPlatoChange}
-        />
-
-        <label htmlFor="descripcion">Descripción:</label>
-        <textarea
-          id="descripcion"
-          name="Descripcion"
-          value={nuevoPlato.Descripcion}
-          onChange={handleNuevoPlatoChange}
-        />
-
-        <label htmlFor="ingredientes">Ingredientes:</label>
-        <textarea
-          id="ingredientes"
-          name="Ingredientes"
-          value={nuevoPlato.Ingredientes}
-          onChange={handleNuevoPlatoChange}
-        />
-
-        <label htmlFor="precio">Precio:</label>
-        <input
-          type="number"
-          id="precio"
-          name="Precio"
-          value={nuevoPlato.Precio}
-          onChange={handleNuevoPlatoChange}
-        />
-        <label htmlFor="imagen">Imagen:</label>
-        <input
-          type="file"
-          id="imagen"
-          name="Image"
-          onChange={(e) => setFile(e.target.files[0])}
-        />
-
-        <button type="button" onClick={agregarPlato}>
-          Agregar plato
-        </button>
-      </form>
-
-      <Footer />
     </div>
   );
 }

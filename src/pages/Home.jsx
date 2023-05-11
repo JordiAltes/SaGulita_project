@@ -24,7 +24,6 @@ function Home() {
         <div className="saGulitaImage"></div>
       </div>
       <div className="saGulita">
-        <div className="foodImage"></div>
         <div className="foodText">
           <h1 className="title">Nuestra comida</h1>
           <p>
@@ -34,6 +33,7 @@ function Home() {
             glúten.
           </p>
         </div>
+        <div className="foodImage"></div>
       </div>
       <div className="saGulita">
         <div className="calendarText">
@@ -50,7 +50,7 @@ function Home() {
           <Mapa />
         </div>
         <div className="mapaText">
-          <h1>Dónde estamos?</h1>
+          <h1 className="titleMap">Dónde estamos?</h1>
           <p>
             Nos encontramos en Ibiza, en carretera de Sant Josep km 1,7 en la
             población de Sant Jordi de ses Salines. Muy cerca del aeropuerto y

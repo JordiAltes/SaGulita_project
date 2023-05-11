@@ -85,3 +85,9 @@
 .modal-close:hover {
   cursor: pointer;
 }
+@media screen and (max-width: 500px) {
+  .modal-content {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

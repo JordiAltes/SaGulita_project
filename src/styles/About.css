@@ -22,14 +22,23 @@
   line-height: 1.5;
 }
 
-.evaSaGulita {
+.fotoAbout {
   background-image: url("../assets/viliEva.jpeg");
   background-size: cover;
   background-position: center;
-  width: 30em;
+  width: 50%;
   height: 30em;
   margin-bottom: 20px;
 }
 .nomPropietario {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 500px) {
+  .propietario p {
+    width: 80%;
+  }
+  .fotoAbout {
+    height: 20em;
+  }
 }

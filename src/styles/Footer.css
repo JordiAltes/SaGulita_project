@@ -7,21 +7,12 @@
   color: white;
   margin-bottom: -250px;
   height: 80px;
-  position: absolute;
-  bottom: 0;
 }
 .textFooter {
   text-align: center;
   flex-grow: 1;
 }
-.logoSaGulita {
-  padding: 10px;
-  font-family: "Fira Sans", sans-serif;
-  font-size: 2em;
-  display: flex;
-  margin-left: 1em;
-  font-weight: bold;
-}
+
 .heartIcon {
   margin-top: 35px;
   color: #e97777;
