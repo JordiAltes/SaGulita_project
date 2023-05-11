@@ -6,7 +6,7 @@ import "../styles/Home.css";
 
 function Home() {
   return (
-    <main className="home">
+    <main>
       <Header />
       <div className="saGulita">
         <div className="saGulitaText">

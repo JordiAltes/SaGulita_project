@@ -140,15 +140,28 @@ body {
   .foodText {
     width: 80%;
     font-size: medium;
-
   }
   .saGulitaImage {
     margin-bottom: 10px;
   }
-  
 }
 @media screen and (max-width: 380px) {
-  .titleMap {
-    display: none;
+  
+  .gridMapa {
+    flex-direction: column-reverse;
+    height: 80vh;
+    align-items: center;
+  }
+  .mapaImage {
+    width: 80%;
+    height: 50vh;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+  }
+  .mapaText {
+    width: 80%;
+    margin-left: 20px;
+    margin-top: 10px;
   }
 }
