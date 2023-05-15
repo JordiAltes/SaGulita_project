@@ -14,7 +14,7 @@
 }
 
 .foodTruckImage {
-  background-image: url("../assets/foodTruck.jpeg");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2FfoodTruck.jpeg?alt=media&token=7c7bfbcc-9790-48d2-923f-76a50ca88f46");
   background-size: cover;
   background-position: center;
   width: 50%;
@@ -38,7 +38,7 @@
 }
 
 .cateringImage {
-  background-image: url("../assets/catering.jpeg");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2Fcatering.jpeg?alt=media&token=c7610ff1-6976-4713-abb6-d98924da69a5");
   background-size: cover;
   background-position: center;
   width: 50%;
@@ -68,7 +68,7 @@
   opacity: 70%;
 }
 .privateCheffImage {
-  background-image: url("../assets/vilixeffprivat.jpg");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2Fvilixeffprivat.jpg?alt=media&token=3d0944a4-6223-45f1-8ab2-484a7d583667");
   background-size: cover;
   background-position: center;
   width: 50%;

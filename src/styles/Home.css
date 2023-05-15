@@ -18,7 +18,7 @@ body {
 }
 
 .saGulitaImage {
-  background-image: url("../assets/edificioSaGulita.jpeg");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2FedificioSaGulita.jpeg?alt=media&token=d1e4f565-75ee-4a62-97cb-7e37512d985e");
   background-size: cover;
   background-position: center;
   width: 50%;
@@ -45,7 +45,7 @@ body {
 }
 
 .foodImage {
-  background-image: url("../assets/foodSaGulita.jpg");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2FfoodSaGulita.jpg?alt=media&token=42322c8a-7216-4b8b-8510-a66d46a61e19");
   background-size: cover;
   background-position: center;
   width: 50%;
@@ -103,7 +103,7 @@ body {
   opacity: 70%;
 }
 .calendarImage {
-  background-image: url("../assets/insideSaGulita.jpeg");
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2FinsideSaGulita.jpeg?alt=media&token=94007443-2770-48c6-9745-33467be2af7a");
   background-size: cover;
   background-position: center;
   width: 50%;
@@ -146,7 +146,6 @@ body {
   }
 }
 @media screen and (max-width: 380px) {
-  
   .gridMapa {
     flex-direction: column-reverse;
     height: 80vh;

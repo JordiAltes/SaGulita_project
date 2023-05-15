@@ -7,15 +7,16 @@ import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import AuthContext from "../context/AuthContext";
 import Logout from "./LogOut";
-import logoSaGulita from "../assets/logoSaGulita.jpeg";
 
 function Header() {
   const { userToken } = useContext(AuthContext);
+  const logoSaGulitaUrl =
+    "https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2FlogoSaGulita.jpeg?alt=media&token=42aa51c7-c4a4-4aad-9f2b-6ae244ed397d";
 
   return (
     <header className="header">
       <div className="logoSaGulita">
-        <img src={logoSaGulita} alt="Logo de Sa Gulita" className="logoImg" />
+        <img src={logoSaGulitaUrl} alt="Logo de Sa Gulita" className="logoImg" />
       </div>
       <div className="links">
         <Link className="linksText" to="/">
