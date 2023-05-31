@@ -1,51 +1,59 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useTranslation } from "react-i18next";
+import { Suspense, useEffect, useState } from "react";
 import "../styles/Services.css";
+import { RaceBy } from '@uiball/loaders'
 
 function Services() {
+  const { t } = useTranslation(["services"]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simular una carga asincrónica para mostrar el spinner
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
   return (
-    <div>
-      <Header />
-      <div className="titleCatering">
-        <h1>Que servicios ofrecemos?</h1>
-      </div>
-      <div className="catering">
-        <div className="foodTruckText">
-          <h1 className="titleTextCatering">Food Truck</h1>
-          <p>
-            Disponemos de una food truck, nuestra Sa Gulita sobre ruedas. La
-            tenemos disponible para eventos, fiestas y bodas. Donde quieras y
-            cuando quieras!
-          </p>
+    <Suspense fallback={<RaceBy size={80} lineWeight={5} speed={1.4} color="black" />}>
+      {loading ? (
+        // Mostrar el spinner de carga mientras el componente se está cargando
+        <div className="loading-spinner">
+          <RaceBy size={80} lineWeight={5} speed={1.4} color="black" />
         </div>
-        <div className="foodTruckImage"></div>
-      </div>
-      <div className="catering">
-        <div className="cateringText">
-          <h1 className="titleTextCatering">Catering</h1>
-          <p>
-            Podeis contactar con nosotros para hacer caterings para eventos
-            privados, fiestas o bodas. Tambien hacemos tartas con previo
-            encargo.
-          </p>
+      ) : (
+      <div>
+        <Header />
+        <div className="titleCatering">
+          <h1>{t("servicesTitle")}</h1>
         </div>
-        <div className="cateringImage"></div>
-      </div>
-      <div className="catering">
-        <div className="privateCheffText">
-          <h1 className="titleTextCatering">Cheff Privado</h1>
-          <p>
-            Nuestro cheff Gerard Vilanova, especializado en comida mediterranea
-            y vegetariana, lleva 5 años de experiencia trabajando como cheff
-            privado en la isla. Puedes contactar con nosotros para pedir mas
-            información. Se adapta a las necesidades del cliente.
-          </p>
+        <div className="catering">
+          <div className="foodTruckText">
+            <h1 className="titleTextCatering">{t("foodTruckTitle")}</h1>
+            <p>{t("foodTruckDescription")}</p>
+          </div>
+          <div className="foodTruckImage"></div>
         </div>
-        <div className="privateCheffImage"></div>
+        <div className="catering">
+          <div className="cateringText">
+            <h1 className="titleTextCatering">{t("cateringTitle")}</h1>
+            <p>{t("cateringDescription")}</p>
+          </div>
+          <div className="cateringImage"></div>
+        </div>
+        <div className="catering">
+          <div className="privateCheffText">
+            <h1 className="titleTextCatering">{t("privateChefTitle")}</h1>
+            <p>{t("privateChefDescription")}</p>
+          </div>
+          <div className="privateCheffImage"></div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+      )}
+    </Suspense>
   );
 }
 export default Services;

@@ -26,7 +26,6 @@ const LoginForm = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
         const userToken = await userCredential.user.getIdToken();
-        console.log(userToken);
         setIsLoggedIn(true);
         setUserToken(userToken);
         localStorage.setItem("userToken", JSON.stringify(userToken));

@@ -3,20 +3,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEarthEurope } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import AuthContext from "../context/AuthContext";
 import Logout from "./LogOut";
+import { useTranslation } from "react-i18next";
+import { startTransition } from 'react';
 
 function Header() {
   const { userToken } = useContext(AuthContext);
   const logoSaGulitaUrl =
     "https://firebasestorage.googleapis.com/v0/b/sagulita-d8f9d.appspot.com/o/fotosWeb%2FlogoSaGulita.jpeg?alt=media&token=42aa51c7-c4a4-4aad-9f2b-6ae244ed397d";
 
+  const { i18n } = useTranslation();
+
+  const changeLanguage = () => {
+    startTransition(() => {
+      const currentLanguage = i18n.language;
+      const newLanguage = currentLanguage === "es" ? "en" : "es";
+      i18n.changeLanguage(newLanguage);
+    });
+  };
+
   return (
     <header className="header">
       <div className="logoSaGulita">
-        <img src={logoSaGulitaUrl} alt="Logo de Sa Gulita" className="logoImg" />
+        <img
+          src={logoSaGulitaUrl}
+          alt="Logo de Sa Gulita"
+          className="logoImg"
+        />
       </div>
       <div className="links">
         <Link className="linksText" to="/">
@@ -38,6 +55,11 @@ function Header() {
         ) : null}
       </div>
       <div className="socialMedia">
+        <FontAwesomeIcon
+          className="earthIcon"
+          icon={faEarthEurope}
+          onClick={changeLanguage}
+        />
         {userToken ? (
           <Logout />
         ) : (

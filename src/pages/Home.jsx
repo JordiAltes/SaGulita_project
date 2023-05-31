@@ -1,65 +1,68 @@
-import React from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import Mapa from "../components/MapSaGulita";
+import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../styles/Home.css";
+import { RaceBy } from '@uiball/loaders'
 
 function Home() {
+  const { t } = useTranslation(["home"]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simular una carga asincrónica para mostrar el spinner
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, []);
+
   return (
-    <main>
-      <Header />
-      <div className="saGulita">
-        <div className="saGulitaText">
-          <h1 className="title">Quiénes somos?</h1>
-          <p>
-            Nacemos del sentimiento de ponerle conciencia a una de las bases
-            vitales más importantes para el ser humano, como lo es la
-            alimentación. Por eso hemos creado un espacio de confianza donde
-            puedes venir a alimentarte de una forma casera, nutritiva, saludable
-            y deliciosa. Elaboramos nuestros productos de principio a fin con
-            productos ecológicos, de proximidad, y contamos con nuestra propia
-            huerta.
-          </p>
+    <Suspense fallback={<RaceBy size={80} lineWeight={5} speed={1.4} color="black" />}>
+      {loading ? (
+        // Mostrar el spinner de carga mientras el componente se está cargando
+        <div className="loading-spinner">
+          <RaceBy size={80} lineWeight={5} speed={1.4} color="black" />
         </div>
-        <div className="saGulitaImage"></div>
-      </div>
-      <div className="saGulita">
-        <div className="foodText">
-          <h1 className="title">Nuestra comida</h1>
-          <p>
-            Ofrecemos comida vegetariana, vegana en su mayoría, sin glúten, y de
-            procedencia orgánica. Todos los días puedes encontrar variedad de
-            platos en nuestro local. Además, hacemos desayunos saludables sin
-            glúten.
-          </p>
-        </div>
-        <div className="foodImage"></div>
-      </div>
-      <div className="saGulita">
-        <div className="calendarText">
-          <h1 className="title">Horario y contacto</h1>
-          <p>
-            Nuestro horario es de 9:30 a 16:30 y abrimos de lunes a sábado.
-            Domingo descansamos.
-          </p>
-        </div>
-        <div className="calendarImage"></div>
-      </div>
-      <div className="gridMapa">
-        <div className="mapaImage">
-          <Mapa />
-        </div>
-        <div className="mapaText">
-          <h1 className="titleMap">Dónde estamos?</h1>
-          <p>
-            Nos encontramos en Ibiza, en carretera de Sant Josep km 1,7 en la
-            población de Sant Jordi de ses Salines. Muy cerca del aeropuerto y
-            de la capital de la isla.
-          </p>
-        </div>
-      </div>
-      <Footer />
-    </main>
+      ) : (
+        // Mostrar el contenido cuando la carga ha finalizado
+        <main>
+          <Header />
+          <div className="saGulita">
+            <div className="saGulitaText">
+              <h1 className="title">{t("whoWeAre")}</h1>
+              <p>{t("whoWeAreDescription")}</p>
+            </div>
+            <div className="saGulitaImage"></div>
+          </div>
+          <div className="saGulita">
+            <div className="foodText">
+              <h1 className="title">{t("ourFood")}</h1>
+              <p>{t("ourFoodDescription")}</p>
+            </div>
+            <div className="foodImage"></div>
+          </div>
+          <div className="saGulita">
+            <div className="calendarText">
+              <h1 className="title">{t("openingHours")}</h1>
+              <p>{t("openingHoursDescription")}</p>
+            </div>
+            <div className="calendarImage"></div>
+          </div>
+          <div className="gridMapa">
+            <div className="mapaImage">
+              <Mapa />
+            </div>
+            <div className="mapaText">
+              <h1 className="titleMap">{t("whereAreWe")}</h1>
+              <p>{t("whereAreWeDescription")}</p>
+            </div>
+          </div>
+          <Footer />
+        </main>
+      )}
+    </Suspense>
   );
 }
+
 export default Home;
