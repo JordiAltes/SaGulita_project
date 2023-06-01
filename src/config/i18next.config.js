@@ -5,10 +5,6 @@ import { initReactI18next } from "react-i18next";
 const i18nConfig = {
   fallbackLng: "es",
   debug: true,
-  detection: {
-    order: ['localStorage', 'navigator'],
-    caches: ['localStorage'],
-  },
   interpolation: {
     escapeValue: false,
   },

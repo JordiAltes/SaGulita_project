@@ -19,11 +19,9 @@ function Header() {
   const { i18n } = useTranslation();
 
   const changeLanguage = () => {
-    startTransition(() => {
-      const currentLanguage = i18n.language;
-      const newLanguage = currentLanguage === "es" ? "en" : "es";
-      i18n.changeLanguage(newLanguage);
-    });
+    const currentLanguage = i18n.language;
+    const newLanguage = currentLanguage === "es" ? "en" : "es";
+    i18n.changeLanguage(newLanguage);
   };
 
   return (
