@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, startTransition } from "react";
 import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,11 +9,14 @@ import "../styles/About.css";
 function About() {
   const { t } = useTranslation("about");
   const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     // Simular una carga asincrónica para mostrar el spinner
     setTimeout(() => {
-      setLoading(false);
-    }, 500);
+      startTransition(() => {
+        setLoading(false);
+      });
+    }, 2000);
   }, []);
 
   return (

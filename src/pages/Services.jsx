@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useTranslation } from "react-i18next";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, startTransition } from "react";
 import "../styles/Services.css";
 import { RaceBy } from '@uiball/loaders'
 
@@ -13,8 +13,10 @@ function Services() {
   useEffect(() => {
     // Simular una carga asincrónica para mostrar el spinner
     setTimeout(() => {
-      setLoading(false);
-    }, 500);
+      startTransition(() => {
+        setLoading(false);
+      });
+    }, 2000);
   }, []);
   return (
     <Suspense fallback={<RaceBy size={80} lineWeight={5} speed={1.4} color="black" />}>

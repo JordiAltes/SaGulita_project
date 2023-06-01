@@ -6,7 +6,7 @@ export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userToken, setUserToken] = useState(
     JSON.parse(localStorage.getItem("userToken")) || null
-  ); // Canviar user per usertoken
+  );
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, userToken, setUserToken }}>

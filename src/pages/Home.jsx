@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { Suspense, useState, useEffect, startTransition } from "react";
 import Mapa from "../components/MapSaGulita";
 import { useTranslation } from "react-i18next";
 import Header from "../components/Header";
@@ -13,8 +13,10 @@ function Home() {
   useEffect(() => {
     // Simular una carga asincrónica para mostrar el spinner
     setTimeout(() => {
-      setLoading(false);
-    }, 500);
+      startTransition(() => {
+        setLoading(false);
+      });
+    }, 2000);
   }, []);
 
   return (
