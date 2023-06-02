@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import "../styles/Footer.css";
-import logoSaGulita from "../assets/logoSaGulita.jpeg";
 
 function Footer() {
   return (

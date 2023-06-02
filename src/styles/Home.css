@@ -124,7 +124,7 @@ body {
   background-color: #daf5ff;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 920px) {
   .saGulita {
     flex-direction: column;
     justify-content: center;

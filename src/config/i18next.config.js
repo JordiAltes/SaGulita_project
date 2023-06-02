@@ -11,12 +11,9 @@ const i18nConfig = {
   backend: {
     loadPath: "/locales/{{lng}}/{{ns}}.json",
   },
+  react: { useSuspense: false },
 };
 
-i18n
-  .use(Backend)
-  .use(initReactI18next)
-  .init(i18nConfig);
+i18n.use(Backend).use(initReactI18next).init(i18nConfig);
 
 export default i18n;
-

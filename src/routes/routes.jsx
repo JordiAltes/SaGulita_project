@@ -8,6 +8,7 @@ import Menu from "../pages/Menu";
 import Admin from "../pages/Admin";
 import PrivateRoute from "./PrivateRoute";
 
+
 const Router = () => {
   return (
     <BrowserRouter>

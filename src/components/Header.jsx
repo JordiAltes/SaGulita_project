@@ -9,7 +9,6 @@ import "../styles/Header.css";
 import AuthContext from "../context/AuthContext";
 import Logout from "./LogOut";
 import { useTranslation } from "react-i18next";
-import { startTransition } from 'react';
 
 function Header() {
   const { userToken } = useContext(AuthContext);
