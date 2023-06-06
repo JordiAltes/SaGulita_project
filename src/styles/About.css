@@ -29,6 +29,7 @@
   width: 50%;
   height: 30em;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 .nomPropietario {
   text-decoration: underline;
@@ -40,5 +41,6 @@
   }
   .fotoAbout {
     height: 20em;
+    width: 90%;
   }
 }

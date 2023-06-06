@@ -11,9 +11,7 @@ function Services() {
     <div>
       <div>
         <Header />
-        <div className="titleCatering">
-          <h1>{t("servicesTitle")}</h1>
-        </div>
+        <div className="titleCatering"></div>
         <div className="catering">
           <div className="foodTruckText">
             <h1 className="titleTextCatering">{t("foodTruckTitle")}</h1>

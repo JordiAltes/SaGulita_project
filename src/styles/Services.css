@@ -20,6 +20,8 @@
   width: 50%;
   height: 100%;
   align-items: center;
+  border-radius: 10px;
+  margin-right: 15px;
 }
 
 .titleTextCatering {
@@ -44,6 +46,8 @@
   width: 50%;
   height: 100%;
   align-items: center;
+  border-radius: 10px;
+  margin-right: 15px;
 }
 .cateringText {
   display: flex;
@@ -74,26 +78,28 @@
   width: 50%;
   height: 100%;
   align-items: center;
+  border-radius: 10px;
+  margin-right: 15px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 920px) {
   .catering {
     flex-direction: column;
     align-items: center;
     height: 80vh;
   }
   .cateringImage,
-  .foodTruckImage {
-    width: 100%;
+  .foodTruckImage,
+  .privateCheffImage {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .cateringText,
   .foodTruckText,
   .privateCheffText {
     width: 80%;
-    font-size: medium;
     margin-left: 0px;
   }
-  .privateCheffImage {
-    width: 75%;
-  }
+ 
 }
