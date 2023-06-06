@@ -5,10 +5,12 @@ const express = require('express');
 const app = express();
 const server = sered(app);
 
-app.use(express.static(path.join(__dirname, 'build')));
+const buildPath = path.join(__dirname, 'build');
 
-server.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.use(express.static(buildPath));
+
+server.all('*', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 const port = 3000;

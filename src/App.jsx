@@ -1,7 +1,9 @@
 import React from "react";
-import Routes from "./routes/routes";
-//import { AuthProvider } from "./context/AuthContext";
+import Router from "./routes/routes";
 
-export const App = () => <Routes />;
+
+export const App = () =>
+
+<Router />;
 
 export default App;
